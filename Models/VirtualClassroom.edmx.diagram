@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c1cf9f1856cd4963a4185662fdaabfc6" Name="Diagram1">
+        <EntityTypeShape EntityType="VirtualClassRoomModel.Admin" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualClassRoomModel.Classroom" Width="1.5" PointX="1" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualClassRoomModel.Student" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualClassRoomModel.Teacher" Width="1.5" PointX="2" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualClassRoomModel.UserInfo" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="VirtualClassRoomModel.FK_Table_ToTable" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="VirtualClassRoomModel.QnA" Width="1.5" PointX="3.75" PointY="6.25" />
+        <AssociationConnector Association="VirtualClassRoomModel.FK_QnA_ToTable" />
+        <EntityTypeShape EntityType="VirtualClassRoomModel.Posts" Width="1.5" PointX="1.125" PointY="9.625" />
+        <AssociationConnector Association="VirtualClassRoomModel.FK_Posts_ToTable" />
+        <EntityTypeShape EntityType="VirtualClassRoomModel.StClass" Width="1.5" PointX="7.25" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="VirtualClassRoomModel.FK_StClass_ToTable_1" />
+        <AssociationConnector Association="VirtualClassRoomModel.FK_StClass_ToTable" />
+        <EntityTypeShape EntityType="VirtualClassRoomModel.Assignment" Width="1.5" PointX="6.875" PointY="9" />
+        <EntityTypeShape EntityType="VirtualClassRoomModel.StAssignment" Width="1.5" PointX="8.5" PointY="1.25" />
+        <AssociationConnector Association="VirtualClassRoomModel.FK_Assignment_ToTable" />
+        <AssociationConnector Association="VirtualClassRoomModel.FK_StAssignment_ToTable" />
+        <AssociationConnector Association="VirtualClassRoomModel.FK_StAssignment_ToTable_1" />
+        <EntityTypeShape EntityType="VirtualClassRoomModel.Answer" Width="1.5" PointX="3.375" PointY="9.75" />
+        <AssociationConnector Association="VirtualClassRoomModel.FK_Table_ToAnswers" />
+        <AssociationConnector Association="VirtualClassRoomModel.FK_Answers_ToTable_1" />
+        <AssociationConnector Association="VirtualClassRoomModel.FK_Answers_ToTable_2" />
+        <AssociationConnector Association="VirtualClassRoomModel.FK_QnA_ToTable_1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link rel="stylesheet" href="your-stylesheet.css" />
+
+    @*// Link JQuery*@
+    <script type="text/javascript" src="~/Scripts/jquery-1.7.1.min.js"></script>
+
+    @*// Link Restive.JS*@
+    <script type="text/javascript" src="~/Scripts/restive.min.js"></script>
+
+    @*// Initialize Restive.JS*@
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('selector').restive(options);
+        });
+    </script>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Teacher/Teacher.cshtml";
+}
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <style>
+        .side-nav {
+            position: fixed;
+            top: 51px;
+            left: 0px;
+            width: 225px;
+            /*margin-left: -225px;*/
+            border: medium none;
+            border-radius: 0px;
+            overflow-y: auto;
+            background-color: #222;
+            bottom: 0px;
+            overflow-x: hidden;
+            padding-bottom: 40px;
+        }
+
+        .navbar-nav {
+            float: left;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navbar navbar-inverse" role="navigation">
+            <ul class="nav navbar-nav side-nav list-groups">
+                <li><a href="~/Teacher/MyProfile">My Profile</a></li>
+                <li class="active"><a href="~/Teacher/Update">Update My Profile</a></li>
+                <li><a href="~/Teacher/AddClassroom">Add Classroom</a></li>
+                <li><a href="~/Teacher/DeleteClassroom">Delete Classroom</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        @model ProjectVirtualClassroom.Models.Teacher
+        @using (Html.BeginForm("UpdateMyProfile", "Teacher/UpdateMyProfile", FormMethod.Post))
+        {
+            <div class="col-sm-3"></div>
+            <div class="col-sm-1">
+
+             @Html.LabelFor(m => m.Id)
+                </div>
+            <div class="col-sm-4">
+             @Html.TextBoxFor(m => m.Id, new { required = true })
+                </div><br/><br/>
+    <div class="form-group">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-offset-6 col-sm-6">
+                    <button type="submit" class="btn btn-gray" style="background-color:lightgray">Enter</button>
+                </div>
+            </div>
+     }
+    </div>
+</body>
+</html>

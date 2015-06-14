@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.8.2.min.js"></script>
+
+    @*// Link Restive.JS*@
+    <script type="text/javascript" src="~/Scripts/restive.min.js"></script>
+
+    @*// Initialize Restive.JS*@
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('selector').restive(options);
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="a">Virtual Classroom</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav pull-right">
+                <li class="active"><a href="~/Teacher/Index">Home</a></li>
+                <li><a href="~/Home/Index">Logout</a></li>
+                @*<li><a href="a">Contact</a></li>*@
+            </ul>
+        </div>
+        </nav>
+    <nav> 
+            <div class="navbar navbar-inverse" role="navigation">
+                <ul class="nav navbar-nav side-nav list-groups">
+                    <li><a href="~/Teacher/MyProfile">My Profile</a></li>
+                    <li><a href="~/Teacher/UpdateMyProfile">Update My Profile</a></li>
+                    <li><a href="~/Teacher/AddClassroom">Add Classroom</a></li>
+                    <li><a href="~/Teacher/DeleteClassroom">Delete Classroom</a></li>
+                </ul>
+            </div>
+        
+    </nav>
+    <div align="center">
+        <h3>Welcome Teacher!!</h3>
+    </div>
+</body>
+</html>

@@ -1,0 +1,200 @@
+﻿@{
+    ViewBag.Title = "SignUpStudent";
+}
+@model ProjectVirtualClassroom.Models.Student
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.8.2.min.js"></script>
+
+    @*// Link Restive.JS*@
+    <script type="text/javascript" src="~/Scripts/restive.min.js"></script>
+
+    @*// Initialize Restive.JS*@
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('selector').restive(options);
+        });
+    </script>
+
+    <style>
+        .form_wrapper {
+            background: none repeat scroll 0% 0% #FFF;
+            border: 1px solid #DDD;
+            margin: 0px auto;
+            width: 250px;
+            font-size: 16px;
+            box-shadow: 1px 1px 7px #CCC;
+        }
+
+            .form_wrapper label {
+                display: block;
+                padding: 10px 30px 0px;
+                margin: 10px 0px 0px;
+            }
+
+            .form_wrapper input[type="radio"] {
+                margin: 5px 30px 6px;
+            }
+
+            .form_wrapper input[type="submit"] {
+                background: none repeat scroll 0% 0% #E3E3E3;
+                border: 1px solid #CCC;
+                color: black;
+                font-family: "Trebuchet MS","Myriad Pro",sans-serif;
+                font-size: 14px;
+                font-weight: bold;
+                padding: 8px 0px 9px;
+                text-align: center;
+                width: 150px;
+                cursor: pointer;
+                float: right;
+                margin: 0px 20px 10px 10px;
+                text-shadow: 0px 1px 0px #FFF;
+                border-radius: 4px;
+                box-shadow: 0px 0px 2px #CCC inset;
+            }
+
+            .form_wrapper h3 {
+                padding: 10px 30px 5px;
+                margin: 10px 0px 5px;
+                font-weight: bold;
+            }
+
+        label {
+            display: inline-block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form_wrapper input[type="text"], .form_wrapper input[type="email"], .form_wrapper input[type="password"] {
+            border: 1px solid #E5E5E5;
+            border-top-width: 1px;
+            border-bottom-width: 1px;
+            border-top-style: solid;
+            border-bottom-style: solid;
+            border-top-color: #E5E5E5;
+            border-bottom-color: #E5E5E5;
+            -moz-border-top-colors: none;
+            -moz-border-right-colors: none;
+            -moz-border-bottom-colors: none;
+            -moz-border-left-colors: none;
+            border-image-source: none;
+            border-image-slice: 100% 100% 100% 100%;
+            border-image-width: 1 1 1 1;
+            border-image-outset: 0 0 0 0;
+            border-image-repeat: stretch stretch;
+            margin: 5px 30px 0px;
+            margin-top: 5px;
+            padding: 9px;
+            padding-top: 9px;
+            padding-bottom: 9px;
+            display: block;
+            font-size: 16px;
+            width: 80%;
+            background: -moz-linear-gradient(center top, #FFF, #EEE 1px, #FFF 25px) repeat scroll 0% 0% transparent;
+            background-color: transparent;
+            background-image: -moz-linear-gradient(center top, #FFF, #EEE 1px, #FFF 25px);
+            background-repeat: repeat;
+            background-attachment: scroll;
+            background-position: 0% 0%;
+            background-clip: border-box;
+            background-origin: padding-box;
+            background-size: auto auto;
+            box-shadow: 0px 0px 8px #F0F0F0;
+        }
+    </style>
+</head>
+<body style="background-image: url(../../Content/themes/base/images/img4.jpg)">
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="a">Virtual Classroom</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav pull-right">
+                <li class="active"><a href="~/Home/Index">Home</a></li>
+                <li><a href="~/Home/About">About</a></li>
+                <li ><a href="~/Home/SignUpTeacher">Sign Up Teacher</a></li>
+                <li class ="active"><a href="~/Home/SignUpStudent">Sign Up Student</a></li>
+                @*<li><a href="a">Contact</a></li>*@
+            </ul>
+        </div>
+    </nav>
+    @*white box*@
+    <div id="form_wrapper" class="form_wrapper" style="width: 500px; height: 800px;">
+        @*<form class="register" onsubmit="return stop()" action="/Home/Register" method="post" style="display: none;">*@
+        <div class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <h3 style="color:silver">Sign Up</h3>
+            </div>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <legend>Teacher</legend>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Password)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Password)
+                    @Html.ValidationMessageFor(model => model.Password)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Degree)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Degree)
+                    @Html.ValidationMessageFor(model => model.Degree)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.University)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.University)
+                    @Html.ValidationMessageFor(model => model.University)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Email)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+
+                <p>
+                    <div align="right">
+                        <input type="submit" value="Sign Up" />
+                    </div>
+                </p>
+            </fieldset>
+        }
+    </div>
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+
+
+</body>
+</html>

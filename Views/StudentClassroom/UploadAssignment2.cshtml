@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "UploadAssignment2";
+}
+@model ProjectVirtualClassroom.Models.Assignment
+@using ProjectVirtualClassroom.Models
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <style>
+        .side-nav {
+            position: fixed;
+            top: 51px;
+            left: 0px;
+            width: 225px;
+            /*margin-left: -225px;*/
+            border: medium none;
+            border-radius: 0px;
+            overflow-y: auto;
+            background-color: #222;
+            bottom: 0px;
+            overflow-x: hidden;
+            padding-bottom: 40px;
+        }
+
+        .navbar-nav {
+            float: left;
+            margin: 0px;
+        }
+
+        .wrapper {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="a">Virtual Classroom</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav pull-right">
+                <li><a href="~/Home/Index">Logout</a></li>
+                @*<li><a href="a">About</a></li>
+                    <li><a href="a">Team</a></li>
+                    <li><a href="a">Contact</a></li>*@
+            </ul>
+        </div>
+        <div>
+            <ul class="nav navbar-nav side-nav list-groups">
+                <li><a href="~/StudentClassroom/Home">Home</a></li>
+                <li><a href="~/StudentClassroom/QnA">Questions &Answers</a></li>
+                @*<li><a href="~/StudentClassroom/AddPost">Add Posts</a></li>*@
+                <li class="active"><a href="~/StudentClassroom/UploadAssignment">Upload Assignment</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-4">
+        <form class="form-horizontal" role="form" method="post" action="/StudentClassroom/UploadAssignment3" enctype="multipart/form-data" style="height:400px; width: 700px;border:solid; border-color:black; border-radius:25px">
+            @*@using (Html.BeginForm("AddPost1", "../../TeacherClassroom", FormMethod.Post, new { style = "height:400px; width: 800px;border:solid; border-color:black; border-radius:25px" }))
+                {*@
+            <div align="center">
+                <h3 style="font-family:'Arial Rounded MT';color:black">Upload Assignment</h3>
+            </div>
+            <div class="form-group">
+                <h3 style="margin-left:30px">@Session["ATitle"]</h3><br />
+                <h5 style="margin-left:30px">@Session["ADetail"]</h5>
+                <p style="margin-left:30px">@Session["DueDate"]</p><br />
+                @*<a href=""
+               <a href="~/StudentClassroom/Download">Download</a>*@
+                @*@Html.HiddenFor(m => m.Id)
+                    @Html.HiddenFor(m=>m.CId)
+                    @Html.LabelFor(m => m.Title, new { style = "margin-left:30px" })
+                    @Html.TextBoxFor(m => m.Title, new { required = true, style = "height:40px; width: 200px; margin-top:10px; margin-left:30px" })
+                    <br /><br />
+                    @Html.LabelFor(m => m.Detail, new { style = "margin-left:30px" })
+                    @Html.TextBoxFor(m => m.Detail, new { required = true, style = "height:100px; width: 400px; margin-top:10px;margin-left:30px" })
+                    @Html.HiddenFor(m => m.StartDate)
+                    <br /><br />
+                    @Html.LabelFor(m => m.SubmissionDate, new { style = "margin-left:30px" })
+                    @Html.TextBoxFor(m => m.SubmissionDate, new { @class = "small", @type = "date", @data_date = "12-02-2012" })*@
+            </div>
+            <div class="form-group">
+                @*<div class="col-sm-3"></div>*@
+                <input type="file" name="image" style="margin-left:30px" />
+                @*<input type="submit" value="upload" />*@
+                <input type="submit" style="background-color: black; border-color:black;border-radius: 10px; height: 40px; width:70px; color:white; margin-left: 30px; margin-right: 10px;" value="Turn In" />
+            </div>
+
+            <br /><br />
+        </form>
+    </div>
+
+</body>
+</html>

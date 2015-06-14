@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "Classroom";
+}
+@model ProjectVirtualClassroom.Models.Classroom
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+    </title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    @*// Link JQuery*@
+    <script type="text/javascript" src="~/Scripts/jquery-1.7.1.min.js"></script>
+
+    @*// Link Restive.JS*@
+    <script type="text/javascript" src="~/Scripts/restive.min.js"></script>
+
+    @*// Initialize Restive.JS*@
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('selector').restive(options);
+        });
+         @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    </script>
+    <style>
+        .container-full {
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .row {
+            width: 99.99%;
+        }
+
+        .container-fluid {
+            padding: 0 15px;
+        }
+        
+    </style>
+</head>
+<body style="background-color:whitesmoke">
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="a">Virtual Classroom</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav pull-right">
+                <li><a href="~/Home/Index">Logout</a></li>
+                    @*<li><a href="a">About</a></li>
+                    <li><a href="a">Team</a></li>
+                    <li><a href="a">Contact</a></li>*@
+                </ul>
+        </div>
+    </nav>
+
+    @RenderBody()
+    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @*<div class="container-fluid">
+        @using (Html.BeginForm("AddPost", "Classroom", FormMethod.Post))
+        {
+            <div class="form-group">
+                @Html.HiddenFor(m => m.Id)
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name)
+
+            </div>
+
+        }
+        <div class="form-group">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-offset-6 col-sm-6">
+                @*<input type="button" style="background-color:black; border:none; color:white; margin-left:400px;margin-right:10px;margin-top:5px " value="Add File" />
+                    <input type="button" style="background-color:black; border:none; color:white; margin-left:400px;margin-right:10px;margin-top:5px " value="Post" />*@
+            @*</div>
+        </div>*@
+        @*<form action="/Classroom/save" method="post" enctype="multipart/form-data">
+
+            Upload Image: <input type="file" name="image" />
+
+
+
+            <input type="submit" value="upload" />
+        </form>*@
+        @*<form class="form-horizontal" role="form" >
+                <div class="form-group" style="border:solid; border-color:black; border-radius:25px">
+                    <h3>Quiz!!!!</h3>
+                    <p>A Quiz will be held on Monday..</p>
+                </div>
+            </form>
+            <form class="form-horizontal" role="form">
+                <div class="form-group" style="border:solid; border-color:black; border-radius:25px">
+                    <h3>Quiz!!!!</h3>
+                    <p>A Quiz will be held on Monday..</p>
+                </div>
+            </form>
+            <form class="form-horizontal" role="form">
+                <div class="form-group" style="border:solid; border-color:black; border-radius:25px">
+                    <h3>Quiz!!!!</h3>
+                    <p>A Quiz will be held on Monday..</p>
+                </div>
+            </form>*@
+    @*</div>*@
+
+</body>
+</html>
+
